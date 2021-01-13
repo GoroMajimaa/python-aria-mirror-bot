@@ -3,9 +3,10 @@ import re
 import threading
 import time
 
+
 from bot import download_dict, download_dict_lock
 from bot.helper.telegram_helper.bot_commands import BotCommands
-from bot import __main__
+
 LOGGER = logging.getLogger(__name__)
 
 MAGNET_REGEX = r"magnet:\?xt=urn:btih:[a-zA-Z0-9]*"
@@ -105,7 +106,6 @@ def get_readable_message():
                         f" | <b>🧲 Peers :- {download.aria_download().connections}</b>"
                 msg += f"\n<b>🚫 Cancel :-</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
             msg += "\n\n"
-
         return msg
 
 
